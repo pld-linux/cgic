@@ -1,0 +1,21 @@
+--- cgic204/Makefile	Thu Apr 22 22:49:47 2004
++++ cgic204-p/Makefile	Mon Jun  7 21:02:42 2004
+@@ -4,7 +4,7 @@
+ RANLIB=ranlib
+ LIBS=-L./ -lcgic
+ 
+-all: libcgic.a cgictest.cgi capture
++all: libcgic.a libcgic.so.2.0.4 cgictest.cgi capture
+ 
+ install: libcgic.a
+ 	cp libcgic.a /usr/local/lib
+@@ -16,6 +16,9 @@
+ 	$(AR) rc libcgic.a cgic.o
+ 	$(RANLIB) libcgic.a
+ 
++libcgic.so.2.0.4: cgic.o cgic.h
++	$(CC) -o $@ -shared -Wl,-soname,libcgic.so.2 $<
++
+ #mingw32 and cygwin users: replace .cgi with .exe
+ 
+ cgictest.cgi: cgictest.o libcgic.a
