@@ -16,36 +16,32 @@ cgic is an ANSI C-language library for the creation of CGI-based
 World Wide Web applications.
 
 %description -l pl
-cgic jest bibliotek± jêzyka ANSI-C s³u¿±c± tworzeniu aplikacji WWW opartych
-na CGI.
+cgic jest bibliotek± jêzyka ANSI-C s³u¿±c± tworzeniu aplikacji WWW
+opartych na CGI.
 
 %package devel
 Summary:	A C library for CGI programming - header files
 Summary(pl):	Biblioteka C do programowania CGI - pliki nag³ówkowe
 Group:		Development/Libraries
-Requires:	%{name}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
-cgic is an ANSI C-language library for the creation of CGI-based
-World Wide Web applications.
+Header files for cgic library.
 
 %description devel -l pl
-cgic jest bibliotek± jêzyka ANSI-C s³u¿±c± tworzeniu aplikacji WWW opartych
-na CGI.
+Pliki nag³ówkowe biblioteki cgic.
 
 %package static
-Summary:	A C library for CGI programming - header files
-Summary(pl):	Biblioteka C do programowania CGI - pliki nag³ówkowe
+Summary:	A C library for CGI programming - static version
+Summary(pl):	Biblioteka C do programowania CGI - wersja statyczna
 Group:		Development/Libraries
-Requires:	%{name}-static
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
-cgic is an ANSI C-language library for the creation of CGI-based
-World Wide Web applications.
+Static version of cgic library.
 
 %description static -l pl
-cgic jest bibliotek± jêzyka ANSI-C s³u¿±c± tworzeniu aplikacji WWW opartych
-na CGI.
+Statyczna wersja biblioteki cgic.
 
 %prep
 %setup -q -n %{name}%{version}
@@ -58,9 +54,10 @@ na CGI.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_libdir},%{_includedir}}
 
-ln -sf libcgic.so.* libcgic.so
 install libcgic.* $RPM_BUILD_ROOT%{_libdir}
 install *.h $RPM_BUILD_ROOT%{_includedir}
+cd $RPM_BUILD_ROOT%{_libdir}
+ln -sf libcgic.so.* libcgic.so
 
 %clean
 rm -rf $RPM_BUILD_ROOT
