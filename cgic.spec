@@ -1,12 +1,12 @@
 Summary:	A C library for CGI programming
 Summary(pl):	Biblioteka C do programowania CGI
 Name:		cgic
-Version:	204
+Version:	205
 Release:	1
 License:	BSD-like
 Group:		Libraries
 Source0:	http://www.boutell.com/%{name}/%{name}%{version}.tar.gz
-# Source0-md5:	4e4ed95f3f49ada0fb92a5e0d20283b3
+# Source0-md5:	b7981300eb14e772f45c0c7add54d629
 Patch0:		%{name}-shared.patch
 URL:		http://www.boutell.com/cgic/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -48,7 +48,8 @@ Statyczna wersja biblioteki cgic.
 %patch0 -p1
 
 %build
-%{__make}
+%{__make} CFLAGS="%{rpmcflags}" \
+	CC="%{__cc}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
