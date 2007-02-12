@@ -1,5 +1,5 @@
 Summary:	A C library for CGI programming
-Summary(pl):	Biblioteka C do programowania CGI
+Summary(pl.UTF-8):   Biblioteka C do programowania CGI
 Name:		cgic
 Version:	205
 Release:	1
@@ -15,32 +15,32 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 cgic is an ANSI C-language library for the creation of CGI-based
 World Wide Web applications.
 
-%description -l pl
-cgic jest bibliotek± jêzyka ANSI-C s³u¿±c± tworzeniu aplikacji WWW
+%description -l pl.UTF-8
+cgic jest bibliotekÄ… jÄ™zyka ANSI-C sÅ‚uÅ¼Ä…cÄ… tworzeniu aplikacji WWW
 opartych na CGI.
 
 %package devel
 Summary:	A C library for CGI programming - header files
-Summary(pl):	Biblioteka C do programowania CGI - pliki nag³ówkowe
+Summary(pl.UTF-8):   Biblioteka C do programowania CGI - pliki nagÅ‚Ã³wkowe
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for cgic library.
 
-%description devel -l pl
-Pliki nag³ówkowe biblioteki cgic.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe biblioteki cgic.
 
 %package static
 Summary:	A C library for CGI programming - static version
-Summary(pl):	Biblioteka C do programowania CGI - wersja statyczna
+Summary(pl.UTF-8):   Biblioteka C do programowania CGI - wersja statyczna
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static version of cgic library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna wersja biblioteki cgic.
 
 %prep
