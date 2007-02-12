@@ -1,5 +1,5 @@
 Summary:	A C library for CGI programming
-Summary(pl.UTF-8):   Biblioteka C do programowania CGI
+Summary(pl.UTF-8):	Biblioteka C do programowania CGI
 Name:		cgic
 Version:	205
 Release:	1
@@ -21,7 +21,7 @@ opartych na CGI.
 
 %package devel
 Summary:	A C library for CGI programming - header files
-Summary(pl.UTF-8):   Biblioteka C do programowania CGI - pliki nagłówkowe
+Summary(pl.UTF-8):	Biblioteka C do programowania CGI - pliki nagłówkowe
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -33,7 +33,7 @@ Pliki nagłówkowe biblioteki cgic.
 
 %package static
 Summary:	A C library for CGI programming - static version
-Summary(pl.UTF-8):   Biblioteka C do programowania CGI - wersja statyczna
+Summary(pl.UTF-8):	Biblioteka C do programowania CGI - wersja statyczna
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
